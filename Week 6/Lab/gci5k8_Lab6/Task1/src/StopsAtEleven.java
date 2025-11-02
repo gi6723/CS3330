@@ -1,26 +1,30 @@
 import java.util.Scanner;
-public class StopsAtEven {
+public class StopsAtEleven {
     public static void main(String[] args){
 
         //Initializing variable to store user input and sum of user input's
         int userInput = 0;
-        int sum = 0;
+        int count = 0;
 
         //Initializing scanner object;
         Scanner scanner = new Scanner(System.in);
 
-        /*
-         * while user input != 11 or a negative value:
-         * sum the integers user given us until they input 11 or a negative value
-         */
+
         while (true){
             userInput = scanner.nextInt();
-            if (userInput == 11 || userInput < 0){
+
+            //Stops reading when 11 is entered
+            if (userInput == 11){
                 break;
             }
-            sum += userInput;
+
+            //Count only non-negative numbers
+            if (userInput >= 0){
+                count++; //increment counter
+            }
         }
-        //Printing out sum to user
-        System.out.print(sum);
+
+        //Printing total count
+        System.out.print(count);
     }
 }
